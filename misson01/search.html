@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search_ms</title>
+    <link rel="stylesheet" href="search.css">
+    <script type="text/javascript">
+      function filter(){
+
+        var value, name, list, i;
+
+        value = document.getElementById("value").value.toUpperCase();
+        list = document.getElementsByClassName("list");
+
+        for(i=0;i<list.length;i++){
+          name = list[i].getElementsByClassName("name");
+          if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
+            list[i].style.display = "flex";
+          }
+          else{
+            list[i].style.display = "none";
+          }
+        }
+      }
+      // 다크모드, 라이트모드 코드
+
+        function BodySetColor(color){
+            document.querySelector('body').style.color = color;
+        }
+
+        function BodySetBackgroundColor(color){
+            document.querySelector('body').style.backgroundColor = color;
+        }
+
+        function day_night_handler(self) {
+            var target = document.querySelector('body');
+            if (self.value == 'light') {
+                BodySetBackgroundColor('black');
+                BodySetColor('white');
+                self.value = 'dark';
+            }
+            else {
+                BodySetBackgroundColor('white');
+                BodySetColor('black');
+                self.value = 'light';
+            }
+        }
+    </script>
+    <style>
+      h1 {text-align: center;}
+    </style>
+</head>
+</script>
+</head>
+<body>
+    <div class="searchbox">
+      <div class="header">
+         <br><h1>🙈 동물을 검색 🐹</h1>
+         <div class="btn">
+         <input type="button" class="btn" value="light" onclick="day_night_handler(this)">
+        </div><br><br>
+      </div><br>
+      <div class="searchh">
+        <input onkeyup="filter()" class="in" type="text" id="value" placeholder="동물을 영어로 입력해 주세요">
+      </div><br>
+ 
+       <div class="container">
+
+          <div class="list">
+            <span class="name">Wolf</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Tiger</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Rabbit</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Panda</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Monkey</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Lion</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Koala</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Hamster</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Giraffe</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Dog</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Cat</span>
+          </div>
+
+          <div class="list">
+            <span class="name">Bird</span>
+          </div>
+
+       </div>
+     </div>
+ </body>
+ </html>
